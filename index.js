@@ -1,18 +1,6 @@
 function isObject(o){
   return !Array.isArray(o) && o === new Object(o);
 }
-var format = function(index){
-  var s = "";
-  for(var i = 0, l = index.length;i < l;i++){
-    switch(index[i]){
-      case 1: s += "┃"; break;
-      case 2: s += "┣ "; break;
-      case 3: s += "┗ "; break;
-      default: s += " ";
-    }
-  }
-  return s;
-};
 
 
 module.exports = function(json, options){
@@ -20,6 +8,7 @@ module.exports = function(json, options){
   if(options.symbol === undefined){
     options.symbol = true;
   }
+  options.padding = options.padding || 0;
 
   var output = "";
   var tree = function(o, depth, index, isLast, inArray){
@@ -51,8 +40,10 @@ module.exports = function(json, options){
         }
       }
       for(var i = 0, l = keys.length;i < l;i++){
-        tree(keys[i], depth, index, i === l - 1);
-        index[depth] = (i === l - 1) ? 0 : 1;
+        var lastFlg = (inArray && !isLast && !options.symbol) ? false : (i === l - 1);
+
+        tree(keys[i], depth, index, lastFlg);
+        index[depth] = lastFlg ? 0 : 1;
         tree(o[keys[i]], depth + 1, index, 1, 1);
       }
     }
@@ -60,6 +51,21 @@ module.exports = function(json, options){
       index[depth] = isLast ? 3 : 2;
       output += format(index) + o + "\n";
     }
+  };
+
+  var format = function(index){
+    var s = "";
+    var p = new Array(options.padding + 1).join(" ");
+    for(var i = 0, l = index.length;i < l;i++){
+      switch(index[i]){
+        case 1: s += "┃"; break;
+        case 2: s += "┣ "; break;
+        case 3: s += "┗ "; break;
+        default: s += " ";
+      }
+      if(i < l - 1){ s += p; }
+    }
+    return s;
   };
   tree(json);
   return output;
