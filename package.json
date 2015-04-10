@@ -15,6 +15,7 @@
     "cli",
     "terminal"
   ],
+  "repository": "https://github.com/zaftzaft/terminal-tree.git",
   "author": "@zaftzaft",
   "license": "MIT",
   "dependencies": {
