@@ -1,8 +1,9 @@
 {
   "name": "terminal-tree",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make a tree.",
   "main": "index.js",
+  "bin": "bin/terminal-tree",
   "directories": {
     "test": "test"
   },
