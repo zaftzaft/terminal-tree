@@ -9,6 +9,7 @@ module.exports = function(json, options){
     options.symbol = true;
   }
   options.padding = options.padding || 0;
+  options.markdown = options.markdown || false;
 
   var output = "";
   var tree = function(o, depth, index, isLast, inArray){
@@ -49,7 +50,14 @@ module.exports = function(json, options){
     }
     else{
       index[depth] = isLast ? 3 : 2;
-      output += format(index) + o + "\n";
+
+      if(options.markdown){
+        output += markdownList(depth) + o + "\n";
+      }
+      else{
+        output += format(index) + o + "\n";
+      }
+
     }
   };
 
@@ -67,6 +75,12 @@ module.exports = function(json, options){
     }
     return s;
   };
+
+  var markdownList = function(depth){
+    return new Array(depth + 1).join("  ") + "+ ";
+  };
+
+
   tree(json);
   return output;
 };
