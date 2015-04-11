@@ -19,6 +19,7 @@
   "author": "@zaftzaft",
   "license": "MIT",
   "dependencies": {
+    "ansi-256-colors": "^1.0.3",
     "chalk": "^1.0.0",
     "commander": "^2.7.1"
   }

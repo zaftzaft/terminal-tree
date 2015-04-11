@@ -1,4 +1,5 @@
 var chalk = require("chalk");
+var ansi256 = require("ansi-256-colors");
 
 function isFunction(f){
   return Object.prototype.toString.call(f) === "[object Function]";
@@ -20,6 +21,9 @@ function coloring(str, color){
   }
   else if(reColorName.test(color)){
     return chalk[color](str);
+  }
+  else if(typeof color === "number" && 0 <= color && color < 256){
+    return ansi256.fg.codes[color] + str + ansi256.reset;
   }
   else{
     return str;
