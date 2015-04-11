@@ -1,4 +1,4 @@
-# terminal-table
+# terminal-tree
 
 ## Installation
 ```bash
@@ -27,6 +27,7 @@ var data = {
 
 console.log(tree(data, {
   symbol: true,
+  highlight: true,
   padding: 1
 }));
 ```
