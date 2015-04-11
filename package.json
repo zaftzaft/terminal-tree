@@ -1,6 +1,6 @@
 {
   "name": "terminal-tree",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Make a tree.",
   "main": "index.js",
   "bin": "bin/terminal-tree",
@@ -19,6 +19,7 @@
   "author": "@zaftzaft",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^1.0.0",
     "commander": "^2.7.1"
   }
 }
