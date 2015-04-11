@@ -2,23 +2,23 @@
 
 ## Installation
 ```bash
-$ npm i -g terminal-table
+$ npm i -g terminal-tree
 ```
 
 ## CLI
 ```bash
-$ terminal-table example.json
+$ terminal-tree example.json
 ```
 
 Output Markdown from 'tree' command.
 ```bash
-$ tree -J | terminal-table -Tm
+$ tree -J | terminal-tree -Tm
 ```
 
 
 ## for Node.js
 ```js
-var tree = require("terminal-table");
+var tree = require("terminal-tree");
 
 var data = {
   test: [1, 2, 3, 4],
