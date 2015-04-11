@@ -1,5 +1,7 @@
 # terminal-tree
 
+![screenshot](https://raw.githubusercontent.com/zaftzaft/terminal-tree/master/img/screenshot.png)
+
 ## Installation
 ```bash
 $ npm i -g terminal-tree
