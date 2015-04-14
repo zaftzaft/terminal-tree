@@ -21,7 +21,7 @@ var parse = function(data){
 
 program
 .usage("[options] <file ...>")
-.version("0.0.3")
+.version("0.0.4")
 .option("-S --hide-symbol", "Hidden symbol")
 .option("-C --disable-highlight", "Disable highlight.")
 .option("-m --markdown", "Parse to Markdown")
