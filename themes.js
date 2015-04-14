@@ -1,15 +1,15 @@
 module.exports = {
   hybrid: {
-    "string": "yellow",
-    "number": "red",
+    "string": 143,
+    "number": 167,
     "boolean": 167,
-    "infinity": "red",
-    "nan": "cyan",
-    "null": "red",
-    "undefined": "gray",
-    "regexp": "green",
-    "key": "magenta",
-    "object": "white",
-    "array": "white"
+    "infinity": 167,
+    "nan": 167,
+    "null": 173,
+    "undefined": 173,
+    "regexp": 143,
+    "key": 139,
+    "object": 109,
+    "array": 110
   }
 };

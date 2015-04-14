@@ -26,6 +26,7 @@ program
 .option("-C --disable-highlight", "Disable highlight.")
 .option("-m --markdown", "Parse to Markdown")
 .option("-T --tree-json", "Parse from `tree -J` command")
+.option("-t --theme <theme>", "")
 .parse(process.argv);
 
 options.highlight = true;
@@ -42,6 +43,9 @@ if(program.hideSymbol){
 }
 if(program.treeJson){
   mode = "treeJson";
+}
+if(program.theme){
+  options.theme = program.theme;
 }
 
 if(program.args.length){

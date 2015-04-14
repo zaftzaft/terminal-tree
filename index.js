@@ -1,5 +1,6 @@
 var chalk = require("chalk");
 var ansi256 = require("ansi-256-colors");
+var themes = require("./themes");
 
 function isFunction(f){
   return Object.prototype.toString.call(f) === "[object Function]";
@@ -54,6 +55,9 @@ module.exports = function(json, options){
   options.markdown = options.markdown || false;
   options.highlight = options.highlight || false;
   options.colors = options.colors || {};
+  if(options.theme){
+    options.colors = themes[options.theme];
+  }
 
   Object.keys(defaultColors).forEach(function(key){
     options.colors[key] = options.colors[key] || defaultColors[key];
