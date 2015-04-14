@@ -34,8 +34,5 @@ console.log(tree(data, {
 }));
 ```
 
-## API
-
-
 ## License
 MIT
